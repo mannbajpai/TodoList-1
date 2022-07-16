@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
@@ -14,7 +15,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-mann:poiuytrewq@cluster0.hx5es3q.mongodb.net/todoListDB", {
+mongoose.connect("mongodb+srv://admin-mann:"+process.env.PASSWORD_MDB+"@cluster0.hx5es3q.mongodb.net/todoListDB", {
   useNewUrlParser: true
 });
 
